@@ -2,7 +2,7 @@
 
 namespace form_asp_net_app.Models
 {
-    public enum City { Krakau = 1, Warsaw = 2, London = 3, France = 4, Germany = 5 }
+    public enum City { Krakau = 1, Warsaw = 2, London = 3, Paris = 4, Berlin = 5 }
 
     public class User
     {
