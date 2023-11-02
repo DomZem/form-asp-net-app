@@ -7,11 +7,11 @@ namespace form_asp_net_app.Models
     public class User
     {
         [Required(ErrorMessage = "Name field is required")]
-        [MinLength(2, ErrorMessage = "Name must contains at least 2 characters")]
+        [MinLength(2, ErrorMessage = "Name must contain at least 2 characters")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Surname field is required")]
-        [MinLength(2, ErrorMessage = "Surname must contains at least 2 characters")]
+        [MinLength(2, ErrorMessage = "Surname must contain at least 2 characters")]
         public string Surname { get; set; }
 
         [Range(10, 80, ErrorMessage = "Age must be between 10 and 80")]
@@ -27,7 +27,7 @@ namespace form_asp_net_app.Models
         public City City { get; set; }
 
         [Required(ErrorMessage = "Password field is required")]
-        [DataType(DataType.Password, ErrorMessage = "Password is not valid")]
+        [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$", ErrorMessage = "Password must contain at least one upper/lower letter, one number and be longer than 8 charaters")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Repeat password field is required")]

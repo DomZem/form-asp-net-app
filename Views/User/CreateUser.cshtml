@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <label asp-for="Phone">Phone number</label>
-            <input asp-for="Phone" type="tel" class="form-control" placeholder="Enter phone number">
+            <input asp-for="Phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" class="form-control" placeholder="Enter phone number">
             <div class="text-danger">
                 @Html.ValidationMessageFor(model => model.Phone)
             </div>
@@ -66,6 +66,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="d-flex gap-2">
+            <button type="submit" class="flex-fill btn btn-primary">Submit</button>
+            <button type="reset" class="flex-fill btn btn-secondary">Reset</button>
+        </div>
     </form>
 </section>
